@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+
+   <extension
+         id="com.example.minimal.ui.perspective"
+         point="org.eclipse.ui.perspectives">
+      <perspective
+         id="com.example.minimal.ui.rootperspective"
+         name="Minimal Perspective"
+         class="com.example.minimal.ui.RootPerspective">
+      </perspective>
+   </extension>
+
+   <extension
+      point="org.eclipse.ui.views">
+      <view
+            class="com.example.minimal.ui.views.RootView"
+            id="com.example.minimal.ui.rootview"
+            name="Main Panel"
+            restorable="true"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.example.minimal.runtime;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-Activator: com.example.minimal.runtime.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-19
+Export-Package: com.example.minimal.runtime
+Require-Bundle: org.eclipse.osgi,
+ org.eclipse.equinox.app,
+ org.eclipse.core.runtime,
+ org.eclipse.swt,
+ org.eclipse.ui,
+ com.example.minimal.ui
+Automatic-Module-Name: com.example.minimal.runtime
+Bundle-ActivationPolicy: lazy
