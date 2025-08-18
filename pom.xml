@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>abergavenny.minimal.common</groupId>
+        <artifactId>common-aggregator</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>releng/abergavenny.releng.config/pom.xml</relativePath>
+    </parent>
+
+    <groupId>abergavenny.minimal</groupId>
+    <artifactId>abergavenny-minimal</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties></properties>
+
+    <repositories>
+        <repository>
+            <id>eclipse-p2-repo</id>
+            <layout>p2</layout>
+            <url>${repo.p2.eclipse.url}</url>
+        </repository>
+    </repositories>
+
+    <modules>
+        <!-- Plugins -->
+        <module>bundles/abergavenny.minimal.ui.components</module>
+        <module>bundles/abergavenny.minimal.ui</module>
+        <module>bundles/abergavenny.minimal.core</module>
+
+        <module>bundles/abergavenny.minimal.rcp</module>
+
+        <!-- Features -->
+        <module>features/abergavenny.minimal.app</module>
+        <module>features/abergavenny.minimal.standalone</module>
+    </modules>
+
+    <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-maven-plugin</artifactId>
+                <version>${tycho-version}</version>
+                <extensions>true</extensions>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-compiler-plugin</artifactId>
+                <version>${tycho-version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <compilerVersion>${java.version}</compilerVersion>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-packaging-plugin</artifactId>
+                <version>${tycho-version}</version>
+                <configuration></configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>target-platform-configuration</artifactId>
+                <version>${tycho-version}</version>
+                <configuration>
+                    <pomDependencies>consider</pomDependencies>
+                    <environments>
+                        <environment>
+                            <os>win32</os>
+                            <ws>win32</ws>
+                            <arch>x86_64</arch>
+                        </environment>
+                    </environments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>minimal</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+            <modules>
+                <!-- Tests -->
+                <module>tests</module>
+
+                <!-- Products -->
+                <module>releng/abergavenny.minimal.product</module>
+            </modules>
+        </profile>
+    </profiles>
+
+</project>

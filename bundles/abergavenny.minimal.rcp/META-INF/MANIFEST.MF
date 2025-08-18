@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: abergavenny.minimal.rcp;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-Activator: abergavenny.minimal.rcp.Activator
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ abergavenny.minimal.core,
+ abergavenny.minimal.ui
+Export-Package: abergavenny.minimal.rcp
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: abergavenny.minimal.rcp

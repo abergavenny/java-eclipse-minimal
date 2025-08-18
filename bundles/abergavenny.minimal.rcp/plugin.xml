@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+    <extension
+        id="application"
+        name="Minimal Application"
+        point="org.eclipse.core.runtime.applications">
+        <application
+            visible="true">
+            <run class="abergavenny.minimal.rcp.Application" />
+        </application>
+    </extension>
+
+    <extension
+        id="application"
+        point="org.eclipse.core.runtime.products">
+        <product
+            application="abergavenny.minimal.rcp.application"
+            name="Minimal">
+            <property
+                name="appName"
+                value="Minimal">
+            </property>
+        </product>
+    </extension>
+
+</plugin>

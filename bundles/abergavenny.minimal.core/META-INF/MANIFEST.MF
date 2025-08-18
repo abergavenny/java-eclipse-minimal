@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: abergavenny.minimal.core;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-Activator: abergavenny.minimal.core.Activator
+Require-Bundle: org.eclipse.core.runtime;visibility:=reexport,
+ org.eclipse.ui
+Export-Package: abergavenny.minimal.core,
+ abergavenny.minimal.core.preferences
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: abergavenny.minimal.core

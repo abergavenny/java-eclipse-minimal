@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+	<extension
+		point="org.eclipse.core.runtime.preferences">
+		<initializer
+			class="abergavenny.minimal.core.preferences.PreferenceInitializer">
+		</initializer>
+	</extension>
+
+	<extension
+		point="org.eclipse.ui.menus">
+		<!-- Note: Menu contributions are added after fillMenuBar was called -->
+		<menuContribution
+			locationURI="menu:org.eclipse.ui.main.menu">
+			<menu label="Preferences" id="abergavenny.minimal.ui.menu.tl">
+				<menu
+					label="Language"
+					id="abergavenny.minimal.ui.menu.tl.s">
+					<command
+						commandId="abergavenny.minimal.core.commands.setLocaleCommand"
+						label="German"
+						style="push">
+						<parameter
+							name="preferences.language"
+							value="de" />
+					</command>
+					<command
+						commandId="abergavenny.minimal.core.commands.setLocaleCommand"
+						label="English"
+						style="push">
+						<parameter
+							name="preferences.language"
+							value="en" />
+					</command>
+				</menu>
+			</menu>
+		</menuContribution>
+	</extension>
+
+	<extension
+		point="org.eclipse.ui.commands">
+		<command
+			id="abergavenny.minimal.core.commands.setLocaleCommand"
+			name="Set Locale Command">
+			<commandParameter
+				id="preferences.language"
+				name="Language" />
+		</command>
+	</extension>
+
+	<extension
+		point="org.eclipse.ui.handlers">
+		<handler
+			commandId="abergavenny.minimal.core.commands.setLocaleCommand"
+			class="abergavenny.minimal.core.handlers.SetLocaleHandler" />
+	</extension>
+
+</plugin>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="abergavenny.minimal.standalone.feature"
+      label="Minimal Standalone"
+      version="0.0.1.qualifier"
+      provider-name="Don&apos;t use Eclipse, use something else ;)">
+
+   <includes
+         id="abergavenny.minimal.app.feature"
+         version="0.0.0"/>
+
+   <requires>
+      <import feature="org.eclipse.rcp" version="4.36.0.v20250528-1830"/>
+   </requires>
+
+</feature>

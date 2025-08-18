@@ -1,1 +1,1 @@
-# java-eclipse-minimal
+# abergavenny-minimal

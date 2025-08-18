@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension
+		point="org.eclipse.ui.perspectives">
+		<perspective
+			id="abergavenny.minimal.ui.rootperspective"
+			name="Root Perspective"
+			class="abergavenny.minimal.ui.RootPerspective">
+		</perspective>
+	</extension>
+
+	<extension point="org.eclipse.ui.views">
+		<view
+			category="org.eclipse.ui"
+			class="abergavenny.minimal.ui.views.RootView"
+			id="abergavenny.minimal.ui.views.rootview"
+			name="Root View XML" />
+	</extension>
+
+	<extension
+		point="org.eclipse.ui.menus">
+		<!-- Note: Menu contributions are added after fillMenuBar was called -->
+		<menuContribution
+			locationURI="menu:org.eclipse.ui.main.menu">
+			<menu
+				label="Top-Level XML"
+				id="abergavenny.minimal.ui.menu.primary">
+				<command
+					commandId="abergavenny.minimal.ui.commands.sayHello"
+					label="Say Hello XML"
+					style="push" />
+			</menu>
+		</menuContribution>
+
+		<menuContribution locationURI="menu:org.eclipse.ui.main.menu">
+			<menu
+				label="Plugs XML"
+				id="abergavenny.minimal.ui.menu.plugsMenu">
+				<command
+					commandId="abergavenny.minimal.ui.commands.setRootPerspective"
+					label="Root perspective"
+					style="push" />
+				<command
+					commandId="abergavenny.minimal.ui.commands.toggleInitializer"
+					label="Toggle initializer"
+					style="push" />
+
+				<separator name="group.start" visible="true" />
+
+				<command
+					commandId="abergavenny.minimal.ui.commands.sayGoodbye"
+					label="Say Goobye XML"
+					style="push" />
+			</menu>
+		</menuContribution>
+	</extension>
+
+	<extension
+		point="org.eclipse.ui.commands">
+		<command
+			id="abergavenny.minimal.ui.commands.sayHello"
+			name="Say Hello" />
+		<command
+			id="abergavenny.minimal.ui.commands.sayGoodbye"
+			name="Say Goodbye" />
+		<command
+			id="abergavenny.minimal.ui.commands.setRootPerspective"
+			name="Root perspective" />
+		<command
+			id="abergavenny.minimal.ui.commands.toggleInitializer"
+			name="Toggle initializer" />
+	</extension>
+
+	<extension
+		point="org.eclipse.ui.handlers">
+		<handler
+			commandId="abergavenny.minimal.ui.commands.sayHello"
+			class="abergavenny.minimal.ui.handlers.SayHelloHandler" />
+		<handler
+			commandId="abergavenny.minimal.ui.commands.sayGoodbye"
+			class="abergavenny.minimal.ui.handlers.SayGoodbyeHandler" />
+		<handler
+			commandId="abergavenny.minimal.ui.commands.setRootPerspective"
+			class="abergavenny.minimal.ui.handlers.SetRootPerspectiveHandler" />
+		<handler
+			commandId="abergavenny.minimal.ui.commands.toggleInitializer"
+			class="abergavenny.minimal.ui.handlers.ToggleInitializerHandler" />
+	</extension>
+
+</plugin>
