@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="abergavenny.minimal.ui.components.designer.BasicViewPart"
+            id="abergavenny.minimal.ui.components.designer.BasicViewPart"
+            name="New ViewPart">
+      </view>
+   </extension>
 </plugin>

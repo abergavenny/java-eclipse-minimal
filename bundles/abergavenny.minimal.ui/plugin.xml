@@ -16,6 +16,11 @@
 			class="abergavenny.minimal.ui.views.RootView"
 			id="abergavenny.minimal.ui.views.rootview"
 			name="Root View XML" />
+				<view
+			category="org.eclipse.ui"
+			class="abergavenny.minimal.ui.components.designer.BasicViewPart"
+			id="abergavenny.minimal.ui.components.designer.BasicViewPart"
+			name="Root View XML" />
 	</extension>
 
 	<extension

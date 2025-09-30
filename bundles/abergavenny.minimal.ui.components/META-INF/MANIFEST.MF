@@ -5,8 +5,10 @@ Bundle-Version: 0.0.1.qualifier
 Require-Bundle: org.eclipse.ui;visibility:=reexport,
  org.eclipse.swt,
  org.eclipse.core.runtime,
- abergavenny.minimal.core
+ abergavenny.minimal.core,
+ org.eclipse.ui.forms;bundle-version="3.13.500"
 Export-Package: abergavenny.minimal.ui.components,
- abergavenny.minimal.ui.components.tables
+ abergavenny.minimal.ui.components.tables,
+ abergavenny.minimal.ui.components.trees
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Automatic-Module-Name: abergavenny.minimal.ui.components
